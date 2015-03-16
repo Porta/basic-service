@@ -1,2 +1,2 @@
-# basic-service
-Base for simple service object
+# basic_service
+Base for a simple service object

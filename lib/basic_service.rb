@@ -1,8 +1,6 @@
 # encoding: UTF-8
 module BasicService
   class Base
-    SUCCESS = 'success'
-    ERROR = 'error'
 
     def self.call(args)
       new(args).tap do |basic_service|
@@ -13,13 +11,13 @@ module BasicService
     end
 
     def success(str = '')
-      @success = SUCCESS
+      @success = true
       @message = str
       @pristine = true
     end
 
     def error(str = '')
-      @error = ERROR
+      @error = true
       @message = str
       @pristine = true
     end
@@ -38,7 +36,8 @@ module BasicService
     # Defaults to the boolean'ed result of "call"
     def success?
       raise RuntimeError, "#success or #error should be called inside #call" unless @pristine
-      SUCCESS == @success
+      raise RuntimeError, "both #success and #error where called" if (@success && @error)
+      @success && !@error
     end
 
     # method error if call not defined

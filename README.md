@@ -2,13 +2,13 @@
 
 Base class for a simple service object.
 
-While there are a few different implementations for this pattern out there, this particular has a few unique features.
+While there are a few different implementations for this pattern out there, this particular has a few unique (I think) features.
 
   - It forces you to call `success()` or `error()` inside the `call()` method in order to access the `result?` method (or it will raise a `RuntimeError` if you haven't)
 
   - It raises a `RuntimeError` if both `success()` and `error()` are called.
 
-  - It allows a return value independtly of the `message` method.
+  - It allows a return value independently of the `message` method.
 
 
 ## Usage
@@ -19,7 +19,7 @@ gem 'basic_service'
 
 
 # my_service.rb
-class MyService < BasicService
+class MyService < BasicService::Base
 
   def call
     first_param = args.pop #args contains the parameters passed to the call function

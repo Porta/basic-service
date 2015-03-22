@@ -39,4 +39,11 @@ class TestClass < Minitest::Test
   end
 
 
+  def test_instance_cases
+    mimimi = GoodTest.call('mimimi')
+    foo = GoodTest.call('foo')
+    refute_equal mimimi.object_id, foo.object_id
+    refute_equal mimimi.message, foo.message
+  end
+
 end

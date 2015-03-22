@@ -1,4 +1,4 @@
-class UglyTest < BasicService::Base
+class UglyTest < Basic::Service
   def call
     something = args.pop
     success("success is great")

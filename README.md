@@ -1,6 +1,6 @@
 # basic_service
 
-Base class for a simple service object.
+Simple class for a simple service object implementation.
 
 While there are a few different implementations for this pattern out there, this particular has a few unique (I think) features.
 
@@ -19,7 +19,7 @@ gem 'basic_service'
 
 
 # my_service.rb
-class MyService < BasicService::Base
+class MyService < Basic::Service
 
   def call
     first_param = args.pop #args contains the parameters passed to the call function
@@ -37,26 +37,26 @@ end
 # somewhere_else.rb
 require_relative 'my_service'
 
-result = MyService.call('foo')
+service = MyService.call('foo')
 
-MyService.success?
+service.success?
 # => true
-MyService.message
+service.message
 # => "foo found"
-MyService.error?
+service.error?
 # => false
-result
+service.result
 # => "I'm done"
 
-result = MyService.call('bar')
+service = MyService.call('bar')
 
-MyService.success?
+service.success?
 # => false
-MyService.message
+service.message
 # => "foo not found"
-MyService.error?
+service.error?
 # => true
-result
+service.result
 # => "I'm done"
 
 ```

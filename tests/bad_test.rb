@@ -1,4 +1,4 @@
-class BadTest < BasicService::Base
+class BadTest < Basic::Service
   def call
     something = args.pop
     "this is the result"

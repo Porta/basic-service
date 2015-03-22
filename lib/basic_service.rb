@@ -1,6 +1,6 @@
 # encoding: UTF-8
-module BasicService
-  class Base
+module Basic
+  class Service
 
     def self.call(args)
       new(args).tap do |basic_service|

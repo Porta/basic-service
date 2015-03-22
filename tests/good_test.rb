@@ -1,4 +1,4 @@
-class GoodTest < BasicService::Base
+class GoodTest < Basic::Service
   def call
     something = args.pop
     if something == 'mimimi'

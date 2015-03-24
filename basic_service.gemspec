@@ -1,8 +1,7 @@
 Gem::Specification.new do |s|
   s.name = 'basic_service'
   s.version = '0.0.1'
-  s.summary = 'Base class for simple service object'
-  s.description = ''
+  s.summary = 'Simple class for a simple service object implementation.'
   s.authors = ['Julián Porta']
   s.email = ['julian@porta.sh']
   s.homepage = "http://github.com/Porta/basic_service/"
